@@ -1,0 +1,35 @@
+version: '3'
+
+volumes:
+  node_modules: {}
+
+services:
+  rollup:
+    build: .
+    image: js_test_kit_tools
+    command: npm run-script test-compiler
+    volumes:
+      - .:/workspace
+      - node_modules:/workspace/node_modules
+    
+  livereload:
+    image: js_test_kit_tools
+    command: npm run-script test-reloader
+    ports:
+      - 35729:35729
+    volumes:
+      - .:/workspace
+      - node_modules:/workspace/node_modules
+    depends_on:
+      - rollup
+
+  nginx:
+    image: nginx:1.17.10
+    ports:
+      - 9999:80
+    volumes:
+      - .:/usr/share/nginx/html
+      - node_modules:/usr/share/nginx/html/node_modules
+    depends_on:
+      - livereload
+

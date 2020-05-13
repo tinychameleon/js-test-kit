@@ -1,0 +1,21 @@
+{
+  "name": "js-test-kit",
+  "description": "A starter-kit for testing front-end Javascript",
+  "author": "Stephan Tarulli <srt@tinychameleon.com>",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "src/index.js",
+  "scripts": {
+    "test-compiler": "rollup -wc",
+    "test-reloader": "livereload ./build/test"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@rollup/plugin-babel": "^5.0.0",
+    "chai": "^4.2.0",
+    "livereload": "^0.9.1",
+    "mocha": "^7.1.2",
+    "rollup": "^2.9.0"
+  }
+}

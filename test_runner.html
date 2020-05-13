@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>JS Test Kit Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./node_modules/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <script src="./node_modules/chai/chai.js"></script>
+    <script src="./node_modules/mocha/mocha.js"></script>
+
+    <script class="mocha-init">
+      assert = chai.assert;
+      mocha.setup('bdd');
+    </script>
+    <script src="./build/test/index.js"></script>
+    <script class="mocha-exec">
+      mocha.run();
+      mocha.checkLeaks();
+    </script>
+    <script src="http://localhost:35729/livereload.js?snipver=1"></script>
+  </body>
+</html>
