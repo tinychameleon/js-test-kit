@@ -13,6 +13,9 @@ The tooling in this repository all runs inside Docker containers, so to get runn
 
 Remember, this is a starter-kit, so it's expected that you will tweak some of the configuration options to better suite your individual needs.
 
+### Chai Test Interfaces
+By default the `assert` interface is loaded from Chai, but if you would like to use the `should` or `expect` interfaces you can do so by editing `test_runner.html`.
+
 ## Technical Details
 This project uses Babel, Rollup, Livereload, Mocha, and Chai to provide a reactive, in-browser test environment for Javascript code.
 A running test environment launches three containers, two of which are based on an LTS version of node: rollup, livereload, and nginx.
